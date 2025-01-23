@@ -1,7 +1,7 @@
 ---
 theme: default
-# https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%B7%91%E8%B5%A4%E9%9D%92%E3%81%AE%E5%85%89--MzXKfizmQs
-background: /top.jpg
+# https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%97%A5%E9%A3%9F%E3%81%AE%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E5%A3%81%E7%B4%99-_ok8uVzL2gI
+background: /background.png
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -13,9 +13,9 @@ title: Next.js入門
 mdc: true
 ---
 
-# ReactとスケールするWebのアーキテクチャ
+# Scalable & React
 
-React開発の背景と現在地
+Metaの大規模開発を支える基盤としてのReact
 
 ---
 
