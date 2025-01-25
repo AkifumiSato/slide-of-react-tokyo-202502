@@ -9,51 +9,56 @@ colorSchema: "dark"
 drawings:
   persist: false
 transition: slide-left
-title: Next.js入門
+title: Reactチームが見てる世界
 mdc: true
 ---
 
-# Scalable & React
+# Reactチームが見てる世界
+
+in React Tokyo
 
 Metaの大規模開発を支える基盤としてのReact
 
 ---
+layout: two-cols
+---
 
 # Profile
 
-- 名前: 佐藤 昭文（[akfm_sato](https://x.com/akfm_sato)、あっきー）
+- 名前: 佐藤 昭文（あっきー）
+- ID: [akfm_sato](https://x.com/akfm_sato)
+- 仕事: フロントエンド開発エキスパート
 - 活動
-  - Next.jsの布教
-    - [Next.jsの考え方](https://zenn.dev/akfm/books/nextjs-basic-principle)
-    - イベント登壇
-  - others
-    - テスト設計の研究: [フロントエンドにおける「単体テストの考え方/使い方」](https://zenn.dev/akfm/articles/frontend-unit-testing)
-    - 稀にRustの布教: [Rust入門本](https://www.amazon.co.jp/dp/4798067318)
-    - OSS `location-state`: 履歴位置単位の状態管理ライブラリ
-      - https://github.com/recruit-tech/location-state
+  - 技術記事: e.g. [Next.jsの考え方](https://zenn.dev/akfm/books/nextjs-basic-principle)
+  - OSS: [`location-state`](https://github.com/recruit-tech/location-state)
+
+::right::
+
+<div class="pt-10 flex justify-center">
+  <img src="https://avatars.githubusercontent.com/u/25711332?v=4" width="200" height="200">
+</div>
 
 ---
 
-# 今日の主題とアジェンダ
+# 今日のテーマ: Reactチームが見てる世界
 
-Reactの開発者達の視点を知って欲しい
+Reactチームの歴史から彼らの視点を知る
 
-- React登場以前の技術的課題
-- ReactはFacebook(Meta)の何を解決したのか
-- ReactはRSCで何を解決したのか
-- Reactの開発者はどこにいるのか
+- React誕生: Facebookが抱えていた課題
+- Reactの活躍: Facebookを支えるReactとGraphQL
+- RSCの誕生: FacebookからVercelへ
 
 ---
 layout: section
 ---
 
-# React登場以前の技術的課題
+# React誕生: Facebookが抱えていた課題
 
 ---
 
-# React登場以前(1): MVCフレームワーク全盛
+# React誕生前(1): MVCフレームワーク全盛
 
-見てきたわけではないので多少誤りはあるかもしれません
+※見てきたわけではないので多少誤りはあるかもしれません
 
 - プログラミング言語も様々
 - HTMLはテンプレートエンジンで出力
@@ -63,9 +68,9 @@ layout: section
 
 ---
 
-# React登場以前(2): Ruby on Railsの衝撃
+# React誕生前(2): Ruby on Railsの衝撃
 
-見てきたわけではないので多少誤りはあるかもしれません
+※見てきたわけではないので多少誤りはあるかもしれません
 
 - ブログを10数分で作れてしまうことが当時は相当な衝撃だったらしい
 - Railに沿ってれば非常に効率的な開発
@@ -76,9 +81,9 @@ layout: section
 
 ---
 
-# React登場以前(3): JavaScriptフレームワーク
+# React誕生前(3): JavaScriptフレームワーク
 
-見てきたわけではないので多少誤りはあるかもしれません
+※見てきたわけではないので多少誤りはあるかもしれません
 
 - EmberやBackboneなど、JavaScriptのフレームワークも様々で始める
 - JavaScriptのSSRを担うRendrなども
@@ -104,11 +109,11 @@ layout: section
 layout: section
 ---
 
-# ReactはFacebook(Meta)の何を解決したのか
+# Reactの活躍: Facebookを支えるReactとGraphQL
 
 ---
 
-# Facebookのスケール
+# ReactとGraphQLの誕生
 
 Facebookは企業として成長し続けており、アプリ開発のスケールが急務だった
 
@@ -118,20 +123,7 @@ TBW
 layout: section
 ---
 
-# ReactはRSCで何を解決したのか
+# RSCの誕生: FacebookからVercelへ
 
 ---
 
-TBW
-
----
-layout: section
----
-
-# Reactの開発者はどこにいるのか
-
----
-
-TBW
-
----
