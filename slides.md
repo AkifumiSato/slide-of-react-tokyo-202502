@@ -17,7 +17,7 @@ mdc: true
 
 in React Tokyo
 
-Metaの大規模開発を支える基盤としてのReact
+Metaの大規模プロダクトを支える、自立分散的アーキテクチャの歴史
 
 ---
 layout: two-cols
@@ -110,7 +110,7 @@ Reactが人気を得るまでには多くの逆風があったが、それだけ
 
 ---
 
-# Reactの誕生初期まとめ
+# まとめ(1)
 
 Reactチームから見ると...
 
@@ -133,7 +133,7 @@ Metaを支えるReact（&GraphQL）
 
 ---
 
-# Reactの誕生〜2020年頃: React拡大期
+# Reactの誕生〜2020年頃、React拡大期
 
 Reactは急速にMeta内外での実績を獲得していく
 
@@ -191,15 +191,13 @@ https://quramy.github.io/graph-api-note/#/21
 
 ---
 
-# Reactの拡大まとめ
+# まとめ(2)
 
 Reactチームから見ると...
 
-- ReactチームはMetaに所属
-- Metaの大規模WebはReactとGraphQLによる自立分散的アーキテクチャが採用されている
-  - このアーキテクチャは、長期にわたって多くのプロダクトを支えている
-- 自立分散的アーキテクチャはスケールしやすいと考えられる
-  - （少なくともMetaやReactチームはそう考えている）
+- MetaはReact+GraphQLによる自立分散的アーキテクチャを採用
+  - 当時から現在までMetaの大規模プロダクトを支えている
+  - Reactチームにとっては最も重要なアーキテクチャパターン
 
 ---
 layout: section
@@ -211,4 +209,75 @@ Reactが抱えていた課題
 
 ---
 
-TBW
+# 2020年頃、Reactが抱えていた課題
+
+Reactアプリケーションが肥大化するにつれ、さまざまな問題が浮き彫りになってきた
+
+- バックエンドアクセス
+  - 冗長な実装
+  - セキュリティ
+  - パフォーマンス
+- バンドルサイズ
+  - 不要なバンドル、冗長なバンドル
+  - 最適化コスト
+  - 抽象化コスト
+- etc...
+
+Meta社内で問題になってたのかは不明だが、<span v-mark.underline.red class="font-bold">Reactユーザーにとっての課題</span>だったことは事実
+
+---
+
+# React Server Components
+
+前述の課題を1つの統合されたアプローチで解決
+
+- バックエンドフルアクセス
+- 0バンドルサイズ（ただし、バンドルサイズは[必ずしも減るわけではない](https://tonyalicea.dev/blog/understanding-react-server-components/)）
+- 自動コードスプリッティング
+- 0コスト抽象化
+- etc...
+
+https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivation
+
+---
+
+# React Server ComponentsとMeta
+
+前述のReact+GraphQLによる自立分散的アーキテクチャとの関係性
+
+- React Server Componentsも**自立分散的アーキテクチャ**である
+  - 前述の通りReactチームにとっては新しくはない、よく知るアーキテクチャである
+  - [_React Server Components と GraphQL のアナロジー_ by Quramyさん](https://quramy.medium.com/react-server-components-%E3%81%A8-graphql-%E3%81%AE%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B8%E3%83%BC-89b3f5f41a01)
+- MetaではReact+GraphQLで解決していた課題を、React単体で解決できるようにしたとも取れる
+  - 実際MetaではまだRSC採用はされたとは聞こえてこない
+  - しかし自立分散的アーキテクチャは獲得してる
+
+---
+
+# 余談: 2022年以降のReactチームとMeta
+
+ReactはMeta専属な雰囲気ではなくなってきた
+
+- 主要なReactチームのメンバーが転職し始める
+  - Dan Abramov: Blue Sky
+  - Andrew Clark: Vercel
+  - Sebastian Markbåge: Vercel
+  - ...etc
+- 2022,2023年には大規模レイオフもあった影響もありそう
+  - （実際Recoilチームは解散させられた...）
+
+---
+
+# まとめ(3)
+
+Metaの大規模プロダクトを支える、自立分散的アーキテクチャの歴史
+
+- MetaはReact+GraphQLで自立分散的アーキテクチャを採用し、成功を収めた
+- React Server Componentsもまた、自立分散的アーキテクチャである
+- Reactは大規模開発を主眼に、シンプルでスケールするフレームワークを目指し続けている
+
+---
+layout: section
+---
+
+# End
