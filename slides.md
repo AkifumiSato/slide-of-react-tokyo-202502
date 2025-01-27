@@ -29,7 +29,7 @@ layout: two-cols
 - ID: [akfm_sato](https://x.com/akfm_sato)
 - 仕事: フロントエンドエキスパート
 - 活動
-  - 技術記事: e.g. [Next.jsの考え方](https://zenn.dev/akfm/books/nextjs-basic-principle)
+  - 執筆: e.g. [Next.jsの考え方](https://zenn.dev/akfm/books/nextjs-basic-principle)
   - OSS: [`location-state`](https://github.com/recruit-tech/location-state)
 
 ::right::
@@ -42,9 +42,9 @@ layout: two-cols
 
 # 今日のテーマ: Reactチームが見てる世界
 
-Reactチームの歴史から彼らの視点を知る
+Reactの歴史から彼らの視点を知る
 
-- React誕生: Facebookが抱えていた課題
+- Reactの誕生: Facebookが抱えていた課題
 - Reactの活躍: Facebookを支えるReactとGraphQL
 - RSCの誕生: FacebookからVercelへ
 
@@ -52,32 +52,39 @@ Reactチームの歴史から彼らの視点を知る
 layout: section
 ---
 
-# React誕生
+# Reactの誕生
 
 Facebookが抱えていた課題
 
 ---
 
-# React登場以前(2012年前後)の風潮と課題
+# 2012年のWeb開発
 
-個人的な、レガシーアプリケーションの保守・エンハンス経験も踏まえて
+僕が見てきたわけではないが、レガシーアプリケーションの保守・エンハンス経験も踏まえて
 
-- Web開発としてはMVC+jQueryなどがよく採用された
-  - 中規模以上の開発でMVC+jQueryは複雑化しやすかった
+- アーキテクチャとしてはWeb MVC+jQueryなどがよく採用された
+  - MVCはスケールと共に複雑化しやすかった
+  - jQueryはブラウザ差異を解決したが、設計は開発者に委ねられてた
 - モバイルアプリの台頭もあり、API層とView層の分離ニーズが高まっていた
 
-<span v-mark.underline.red class="font-bold">フロントエンドフレームワーク需要が拡大</span>
+結果、<span v-mark.underline.red class="font-bold">フロントエンドフレームワーク需要が拡大</span>していた（らしい）
 
 ---
 
-# JavaScriptフレームワークとFacebook
+# 2012年のフロントエンド事情とFacebook
 
-[React.js: The Documentary](https://www.youtube.com/watch?v=8pDqJVdNa44)より
+Facebookは既存のOSSフレームワークではなく、内省開発を試みていた
 
-- OSSで言うとEmberやBackbone.jsなど
-- FacebookではBackbone.jsに影響を受けた、Bolt.jsというフレームワークを内省開発していた
+1. Facebookでは複雑なUI開発に苦労しており、これを解決するためにBolt.jsを開発していた
+1. 複雑なUI開発で最も複雑な問題は、**更新**である仮説が建てられた
+1. 「更新が発生したら再レンダリングする」というアイディアを取り込んだFBolt.jsが誕生
+1. FBolt.jsにさらにJSXなどのアイディアが取り込まれて、名前もReactに変更された
 
-Bolt.jsに関数型のアイディアで改善を試みたのが、<span v-mark.underline.red class="font-bold">後のReactのベース</span>となってる
+Reactは以下**3つの大きなアイディア**を持って生まれた
+
+- <span v-mark="{ at: 1, color: '#f87171', type: 'underline' }">関数型思考</span>
+- <span v-mark="{ at: 1, color: '#f87171', type: 'underline' }">更新に伴う再レンダリング</span>
+- <span v-mark="{ at: 1, color: '#f87171', type: 'underline' }">JSX</span>
 
 <!--
 参考https://dionarodrigues.dev/blog/reactjs-behind-the-scenes
@@ -85,15 +92,32 @@ Bolt.jsに関数型のアイディアで改善を試みたのが、<span v-mark.
 
 ---
 
-# Reactの誕生とInstagram
+# 2013年、ReactはOSS化するも...
 
-[React.js: The Documentary](https://www.youtube.com/watch?v=8pDqJVdNa44)より
+React公開直後は、批判的意見が多かった
 
-- Bolt.jsにレンダリングやJSXなどのアイディアが取り込まれ、Reactが誕生した
 - ReactはInstagramのWeb UIで最初に採用された
-- ReactのOSS化の発表
-  - これに興味を持ったSophie Alpert氏が2000行のコントリビュートし、多くの課題を解決
-  - その後コミュニティが拡大、様々な企業が採用
+  - Reactはまだ未完成で、何度も議論と決断があったらしい
+- Facebook社内での成功もあり、2013年ReactはOSS化
+  - US JSConfで発表も否定的意見が多かった
+  - 多くの改善を重ねUE JSConfで再度発表、徐々にコミュニティが拡大し採用事例も増える
+
+Reactが人気を得るまでには多くの逆風があった=それだけ<span v-mark.underline.red class="font-bold">革命的なアイディア</span>を持ち合わせていた
+
+---
+
+# Reactの誕生初期まとめ
+
+Reactチームから見ると...
+
+- Facebookはシンプルでスケールできるフレームワークを求めていた
+  - 既存のフレームワークでは、複雑なUI開発に苦労した
+  - 覚えやすさやパフォーマンスはおそらく2番目
+- Reactは以下3つの大きなアイディアを持って生まれた
+  - 関数型思考
+  - 更新に伴う再レンダリング
+  - JSX
+- React初期は特に多くの逆風があった
 
 ---
 layout: section
