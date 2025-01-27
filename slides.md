@@ -42,11 +42,11 @@ layout: two-cols
 
 # 今日のテーマ: Reactチームが見てる世界
 
-ReactやMetaの歴史から彼らの視点を知る
+Reactチームから見たReact Server Componentsを、歴史から紐解く
 
-- Reactの誕生: Metaが抱えていた課題
-- Reactの拡大: Metaを支えるReact&GraphQL
-- RSCの誕生: Reactが抱えていた課題
+1. Reactの誕生
+1. ReactとGraphQL
+1. RSCの誕生
 
 ---
 layout: section
@@ -54,13 +54,13 @@ layout: section
 
 # Reactの誕生
 
-Metaが抱えていた課題
+ViewライブラリとしてのReact
 
 ---
 
 # 2012年のWeb開発
 
-僕が見てきたわけではないが、レガシーアプリケーションの保守・エンハンス経験も踏まえて
+見てきたわけではないが、僕のレガシーアプリケーションの保守・エンハンス経験も踏まえて
 
 - アーキテクチャとしてはWeb MVC+jQueryなどがよく採用された
   - MVCはスケールと共に複雑化しやすかった
@@ -110,7 +110,7 @@ Reactが人気を得るまでには多くの逆風があったが、それだけ
 
 ---
 
-# まとめ(1)
+# Reactの誕生 まとめ
 
 Reactチームから見ると...
 
@@ -127,9 +127,9 @@ Reactチームから見ると...
 layout: section
 ---
 
-# Reactの拡大
+# ReactとGraphQL
 
-Metaを支えるReact（&GraphQL）
+Metaを支える技術基盤
 
 ---
 
@@ -137,7 +137,6 @@ Metaを支えるReact（&GraphQL）
 
 Reactは急速にMeta内外での実績を獲得していく
 
-- 拡大期においてもReactチームはMetaに所属
 - Meta以外にもNetflixやAirbnbなど、多くの企業がReactを採用
 - 関連ライブラリやプラクティスも急速に拡大
 - hooksや並行レンダリングなど登場するが、破壊的変更は最小限に留められた
@@ -191,13 +190,14 @@ https://quramy.github.io/graph-api-note/#/21
 
 ---
 
-# まとめ(2)
+# ReactとGraphQL まとめ
 
 Reactチームから見ると...
 
-- MetaはReact+GraphQLによる自立分散的アーキテクチャを採用
-  - 当時から現在までMetaの大規模プロダクトを支えている
-  - Reactチームにとっては最も重要なアーキテクチャパターン
+- React+GraphQLによる自立分散的アーキテクチャは、最も重要なアーキテクチャパターン
+  - 自立分散的アーキテクチャ=コンポーネントが必要なデータを自分で宣言する世界
+  - バックエンドはこれに合わせて、細粒度に設計される必要がある
+  - 実際にMetaは社内でこれを採用し、現在も多くのプロダクトを支えている
 
 ---
 layout: section
@@ -205,7 +205,7 @@ layout: section
 
 # RSCの誕生
 
-Reactが抱えていた課題
+新たな自立分散的アーキテクチャ
 
 ---
 
@@ -223,8 +223,6 @@ Reactアプリケーションが肥大化するにつれ、さまざまな問題
   - 抽象化コスト
 - etc...
 
-Meta社内で問題になってたのかは不明だが、<span v-mark.underline.red class="font-bold">Reactユーザーにとっての課題</span>だったことは事実
-
 ---
 
 # React Server Components
@@ -241,16 +239,13 @@ https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivat
 
 ---
 
-# React Server ComponentsとMeta
+# React Server Componentsの自立分散性
 
 前述のReact+GraphQLによる自立分散的アーキテクチャとの関係性
 
 - React Server Componentsも**自立分散的アーキテクチャ**である
-  - 前述の通りReactチームにとっては新しくはない、よく知るアーキテクチャである
   - [_React Server Components と GraphQL のアナロジー_ by Quramyさん](https://quramy.medium.com/react-server-components-%E3%81%A8-graphql-%E3%81%AE%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B8%E3%83%BC-89b3f5f41a01)
 - MetaではReact+GraphQLで解決していた課題を、React単体で解決できるようにしたとも取れる
-  - 実際MetaではまだRSC採用はされたとは聞こえてこない
-  - しかし自立分散的アーキテクチャは獲得してる
 
 ---
 
@@ -268,13 +263,13 @@ ReactはMeta専属な雰囲気ではなくなってきた
 
 ---
 
-# まとめ(3)
+# まとめ
 
 Metaの大規模プロダクトを支える、自立分散的アーキテクチャの歴史
 
 - MetaはReact+GraphQLで自立分散的アーキテクチャを採用し、成功を収めた
 - React Server Componentsもまた、自立分散的アーキテクチャである
-- Reactは大規模開発を主眼に、シンプルでスケールするフレームワークを目指し続けている
+- Reactは大規模開発まで通用する、シンプルでスケールするフレームワークを目指し続けている
 
 ---
 layout: section
