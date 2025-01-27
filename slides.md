@@ -17,7 +17,7 @@ mdc: true
 
 in React Tokyo
 
-Metaの大規模プロダクトを支える、自立分散的アーキテクチャの歴史
+Reactが見据える大規模開発とアーキテクチャ
 
 ---
 layout: two-cols
@@ -46,7 +46,7 @@ Reactチームから見たReact Server Componentsを、歴史から紐解く
 
 1. Reactの誕生
 1. ReactとGraphQL
-1. RSCの誕生
+1. React Server Components
 
 ---
 layout: section
@@ -71,24 +71,25 @@ ViewライブラリとしてのReact
 
 ---
 
-# 2012年のフロントエンド事情とMeta
+# 2012年のMetaとフレームワーク開発
 
 Metaは既存のOSSフレームワークではなく、内省開発を試みていた
 
-1. Meta（当時はFacebook）では複雑なUI開発に苦労しており、これを解決するためにBolt.jsを開発していた
-1. 複雑なUI開発で最も複雑な問題は、**更新**である仮説が建てられた
-1. 「更新が発生したら再レンダリングする」というアイディアを取り込んだFBolt.jsが誕生
-1. FBolt.jsにさらにJSXなどのアイディアが取り込まれて、名前もReactに変更された
+1. Meta（当時はFacebook）では複雑なUI開発に苦労していた
+1. これを解決すべく、フロントエンドのMVCフレームワーク*Bolt.js*を開発していた
+1. *Bolt.js*の利用拡大の中で、UI開発の最も複雑な問題は**更新**である仮説が建てられた
+1. 更新が発生したら再レンダリングするというアイディアを取り込んだ*FBolt.js*が誕生
+1. *FBolt.js*にさらにJSXなどのアイディアが取り込まれて、名前も<span v-mark.circle.red class="italic">React</span>に変更された
 
-<span v-mark="{ at: 1, color: '#f87171', type: 'underline' }">Reactは以下**3つの大きなアイディア**を持って生まれた</span>
+---
 
-<div v-click="1">
+# Reactの誕生
+
+Reactは以下3つのアイディアを持って生まれた
 
 - 関数型思考
 - 更新に伴う再レンダリング
 - JSX
-
-</div>
 
 <!--
 参考: https://dionarodrigues.dev/blog/reactjs-behind-the-scenes
@@ -96,17 +97,15 @@ Metaは既存のOSSフレームワークではなく、内省開発を試みて�
 
 ---
 
-# 2013年、ReactはOSS化するも...
+# ReactのOSS化
 
-React公開直後は、批判的意見が多かった
+OSSとして公開した直後は、批判的意見が多かった
 
-- ReactはInstagramのWeb UIで最初に採用された
-  - Reactはまだ未完成で、何度も議論と決断があったらしい
-- Instagramでの成功を経て、2013年ReactはOSS化
-  - US JSConfで発表も否定的意見が多かった
+- Meta社内でReactが採用されはじめ、2013年ReactはOSS化
+  - US JSConfで発表するも、否定的意見が多かった
   - 多くの改善を重ねUE JSConfで再度発表、徐々にコミュニティが拡大し採用事例も増える
 
-Reactが人気を得るまでには多くの逆風があったが、それだけ<span v-mark.underline.red class="font-bold">革命的なアイディア</span>を持ち合わせていた
+当初は強い逆風だったが、それだけ<span v-mark.underline.red class="font-bold">革命的なアイディア</span>だったとも言える
 
 ---
 
@@ -114,14 +113,9 @@ Reactが人気を得るまでには多くの逆風があったが、それだけ
 
 Reactチームから見ると...
 
-- Metaはシンプルでスケールできるフレームワークを求めていた
-  - 既存のフレームワークでは、複雑なUI開発に苦労した
-  - 覚えやすさやパフォーマンスはおそらく2番目
-- Reactは以下3つの大きなアイディアを持って生まれた
-  - 関数型思考
-  - 更新に伴う再レンダリング
-  - JSX
-- React初期は特に多くの逆風があった
+- Metaは複雑なUI開発に耐えうる<span v-mark.underline.red class="font-bold">シンプル</span>なフレームワークを求めていた
+  - 覚えやすさやパフォーマンスは1番ではない
+  - Reactは革新的だったが故に、初期は多くの人が否定的だった
 
 ---
 layout: section
@@ -203,7 +197,7 @@ Reactチームから見ると...
 layout: section
 ---
 
-# RSCの誕生
+# React Server Components
 
 新たな自立分散的アーキテクチャ
 
@@ -249,27 +243,19 @@ https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivat
 
 ---
 
-# 余談: 2022年以降のReactチームとMeta
-
-ReactはMeta専属な雰囲気ではなくなってきた
-
-- 主要なReactチームのメンバーが転職し始める
-  - Dan Abramov: Blue Sky
-  - Andrew Clark: Vercel
-  - Sebastian Markbåge: Vercel
-  - ...etc
-- 2022,2023年には大規模レイオフもあった影響もありそう
-  - （実際Recoilチームは解散させられた...）
+<div class="w-full h-full flex justify-center items-center">
+  <img src="/rsc.png" alt="React Server Components" class="h-350px">
+</div>
 
 ---
 
 # まとめ
 
-Metaの大規模プロダクトを支える、自立分散的アーキテクチャの歴史
+Reactは大規模開発に通用する
 
-- MetaはReact+GraphQLで自立分散的アーキテクチャを採用し、成功を収めた
+- MetaはReact+GraphQLで自立分散的アーキテクチャを採用している
 - React Server Componentsもまた、自立分散的アーキテクチャである
-- Reactは大規模開発まで通用する、シンプルでスケールするフレームワークを目指し続けている
+- Reactとは、「大規模開発まで通用する、シンプルなフレームワーク」である
 
 ---
 layout: section
