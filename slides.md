@@ -40,9 +40,25 @@ layout: two-cols
 
 ---
 
+# 前提: Metaの大規模開発
+
+Metaは我々が想像もできない規模の開発を行なっている
+
+- 世界中に独自のデータセンターを配置
+- フレームワークや言語開発も厭わない開発予算
+- 現在では、Meta社内には数万のコンポーネントが存在
+  - 10万以上という噂も
+  - 多くの修正を自動化しているらしい（Code mod？）
+
+<!--
+参考: https://medium.com/@syedmahmad/react-relay-modern-simplified-956f33739f0
+-->
+
+---
+
 # 今日のテーマ: Reactチームが見てる世界
 
-Reactチームから見たReact Server Componentsを、歴史から紐解く
+大規模開発を支えるReactチームが見てる世界を、歴史から紐解く
 
 1. Reactの誕生
 1. ReactとGraphQL
@@ -171,24 +187,6 @@ GraphQLはプロトコルなのか
 <div class="w-full h-full flex justify-center mt-10">
   <img src="/graphql.png" alt="GraphQL" class="h-350px">
 </div>
-
----
-transition: fade
----
-
-# MetaにとってGraphQLとReact
-
-Metaは我々が想像もできない規模の開発を行なっている
-
-- 世界中に独自のデータセンターを配置
-- フレームワークや言語開発も厭わない開発予算
-- Meta社内には数万のコンポーネントが存在
-  - 10万以上という噂も
-  - 多くの修正を自動化しているらしい（Code mod？）
-
-<!--
-参考: https://medium.com/@syedmahmad/react-relay-modern-simplified-956f33739f0
--->
 
 ---
 transition: fade
