@@ -152,23 +152,23 @@ Reactは急速にMeta内外での実績を獲得していく
 - その後、Meta社内でReact&Relay(GraphQL)の採用が進む
 
 ---
-transition: fade
----
 
 # MetaにとってGraphQL
 
 GraphQLはプロトコルなのか
 
 - MetaにとってGraphQLはBFFに対する通信、つまり**フロントエンド内通信**の問題を解決する技術
+  - Fragmentを使って「コンポーネントが必要なデータはコンポーネントが宣言する」ことが基本
+  - [Thinking in Relay](https://relay.dev/docs/principles-and-architecture/thinking-in-relay/)
 - Meta以外では**バックエンドとの通信**でプロトコルとして採用されることが多い
   - Github、Shopify、Netflix、etc...
-  - Metaではこれは**Thrift**というRPCが採用されている
+  - （Metaではこれは**Thrift**というRPCが採用されている）
 
 開発元のMetaと世間では、<span v-mark.underline.red class="font-bold">GraphQL採用のモチベーションが異なる</span>ことが多い
 
 ---
 
-# MetaにとってGraphQL
+# Metaの考えるGraphQLが担う層
 
 <div class="w-full h-full flex justify-center items-center">
   <img src="/graphql.png" alt="GraphQL" class="h-350px">
@@ -193,19 +193,25 @@ Metaは我々が想像もできない規模の開発を行なっている
 -->
 
 ---
+transition: fade
+---
 
 # MetaにとってGraphQLとReact
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
-- MetaはReactやGraphQLによって**自律分散的アーキテクチャ**を目指す傾向にある
+- MetaはReactとGraphQLによって**自律分散的アーキテクチャ**を目指す傾向にある
   - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ
   - 中央集権の例はReduxやWeb MVCなど
-- GraphQLのFragment Colocationを用いて、コンポーネント付近で必要なデータフェッチも定義
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OXYaanlsu9RszaGrstHP2A.png" alt="https://quramy.github.io/graph-api-note/#/21" width="300" class="pt-5">
+---
 
-https://quramy.github.io/graph-api-note/#/21
+# MetaにとってGraphQLとReact
+
+<div class="w-full h-full flex justify-center items-center flex-col gap-10">
+  <img src="/top-level-data-fetching.png" alt="Top Level Data Fetching" width="80%">
+  <img src="/graphql-co-location.png" alt="GraphQL" width="80%">
+</div>
 
 ---
 
@@ -213,7 +219,7 @@ https://quramy.github.io/graph-api-note/#/21
 
 Metaを支える技術基盤
 
-- React+GraphQLによる自立分散的アーキテクチャは、最も重要なアーキテクチャパターン
+- MetaにとってReactとGraphQLは<span v-mark.underline.red class="font-bold">自立分散的アーキテクチャ</span>を構築するための基盤
   - 自立分散的アーキテクチャ=コンポーネントが必要なデータを自分で宣言する世界
   - バックエンドはこれに合わせて、細粒度に設計される必要がある
   - 実際にMetaは社内でこれを採用し、現在も多くのプロダクトを支えている
@@ -257,8 +263,6 @@ Reactアプリケーションが肥大化するにつれ、さまざまな問題
 https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivation
 
 ---
-transition: fade
----
 
 # React Server Componentsの自立分散性
 
@@ -270,10 +274,11 @@ transition: fade
 
 ---
 
-# React Server Componentsの自立分散性
+# RSCでのData Fetching
 
-<div class="w-full h-full flex justify-center items-center">
-  <img src="/rsc.png" alt="React Server Components" class="h-350px">
+<div class="w-full h-full flex justify-center items-center flex-col gap-10">
+  <img src="/graphql-co-location.png" alt="GraphQL" width="70%">
+  <img src="/react-server-components.png" alt="React Server Components" width="70%">
 </div>
 
 ---
