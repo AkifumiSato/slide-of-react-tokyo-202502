@@ -54,7 +54,7 @@ layout: section
 
 # Reactの誕生
 
-ViewライブラリとしてのReact
+Reactは何を解決すべく生まれたのか
 
 ---
 
@@ -62,8 +62,8 @@ ViewライブラリとしてのReact
 
 見てきたわけではないが、僕のレガシーアプリケーションの保守・エンハンス経験も踏まえて
 
-- アーキテクチャとしてはWeb MVC+jQueryなどがよく採用された
-  - MVCはスケールと共に複雑化しやすかった
+- サーバーサイドWeb MVC+jQueryがよく採用されていた
+  - Web MVCはスケールと共に複雑化しやすかった
   - jQueryはブラウザ差異を解決したが、設計は開発者に委ねられてた
 - モバイルアプリの台頭もあり、API層とView層の分離ニーズが高まっていた
 
@@ -73,13 +73,13 @@ ViewライブラリとしてのReact
 
 # 2012年のMetaとフレームワーク開発
 
-Metaは既存のOSSフレームワークではなく、内省開発を試みていた
+Meta（当時はFacebook）はフロントエンドフレームワークを内省開発していた
 
-1. Meta（当時はFacebook）では複雑なUI開発に苦労していた
-1. これを解決すべく、フロントエンドのMVCフレームワーク*Bolt.js*を開発していた
-1. *Bolt.js*の利用拡大の中で、UI開発の最も複雑な問題は**更新**である仮説が建てられた
-1. 更新が発生したら再レンダリングするというアイディアを取り込んだ*FBolt.js*が誕生
-1. *FBolt.js*にさらにJSXなどのアイディアが取り込まれて、名前も<span v-mark.circle.red class="italic">React</span>に変更された
+1. Metaは複雑なUI実装に苦労していた
+1. これを解決すべく、クライアントサイドMVCフレームワークであるBolt.jsを開発していた
+1. UI開発の最も複雑な問題は**更新**である仮説が生まれる
+1. MVCを削除し、更新に応じて再レンダリングするアイディアを取り込んだFBolt.jsが誕生
+1. さらにJSXなどのアイディアが取り込まれ、**React**が誕生
 
 ---
 
@@ -111,7 +111,7 @@ OSSとして公開した直後は、批判的意見が多かった
 
 # Reactの誕生 まとめ
 
-Reactチームから見ると...
+Reactは何を解決すべく生まれたのか
 
 - Metaは複雑なUI開発に耐えうる<span v-mark.underline.red class="font-bold">シンプル</span>なフレームワークを求めていた
   - 覚えやすさやパフォーマンスは1番ではない
@@ -142,7 +142,8 @@ Reactは急速にMeta内外での実績を獲得していく
 
 同時期に開発されていたGraphQLも急速に拡大し始める
 
-- 2012年: MetaではREST APIの課題（以下）を解決すべくGraphQLの開発が開始
+- ~2012年: Metaはクライアントサイド・BFF・バックエンドの3層構成を基本としていた
+- 2012年: BFFでREST API採用時に発生する課題（以下）を解決すべく、GraphQLの開発が開始
   - 複数エンドポイントからデータ取得するとネットワーク効率が悪い
   - Over-fetching: 取得するデータが過剰になる場合がある
   - Under-fetching: 取得するデータが不足する場合がある
@@ -151,10 +152,23 @@ Reactは急速にMeta内外での実績を獲得していく
 - その後、Meta社内でReact&Relay(GraphQL)の採用が進む
 
 ---
+
+# MetaにとってGraphQL
+
+GraphQLはプロトコルなのか
+
+- MetaにとってGraphQLはBFFに対する通信、つまり**フロントエンド内通信**の問題を解決する技術
+- Meta以外では**バックエンドとの通信**でプロトコルとして採用されることが多い
+  - Github、Shopify、Netflix、etc...
+  - Metaではこれは**Thrift**というRPCが採用されている
+
+開発元のMetaと世間では、<span v-mark.underline.red class="font-bold">GraphQL採用のモチベーションが異なる</span>ことが多い
+
+---
 transition: fade
 ---
 
-# React, GraphQL, Meta
+# Metaの技術基盤 React&GraphQL
 
 Metaは我々が想像もできない規模の開発を行なっている
 
@@ -170,12 +184,13 @@ Metaは我々が想像もできない規模の開発を行なっている
 
 ---
 
-# React, GraphQL, Meta
+# Metaの技術基盤 React&GraphQL
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
-- MetaではReactとGraphQLによる**自律分散的アーキテクチャ**を採用してる
-  - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ（Web MVCなど）
+- MetaはReactやGraphQLによって**自律分散的アーキテクチャ**を目指す傾向にある
+  - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ
+  - 中央集権の例はReduxやWeb MVCなど
 - GraphQLのFragment Colocationを用いて、コンポーネント付近で必要なデータフェッチも定義
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OXYaanlsu9RszaGrstHP2A.png" alt="https://quramy.github.io/graph-api-note/#/21" width="300" class="pt-5">
@@ -186,7 +201,7 @@ https://quramy.github.io/graph-api-note/#/21
 
 # ReactとGraphQL まとめ
 
-Reactチームから見ると...
+Metaを支える技術基盤
 
 - React+GraphQLによる自立分散的アーキテクチャは、最も重要なアーキテクチャパターン
   - 自立分散的アーキテクチャ=コンポーネントが必要なデータを自分で宣言する世界
