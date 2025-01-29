@@ -152,6 +152,8 @@ Reactは急速にMeta内外での実績を獲得していく
 - その後、Meta社内でReact&Relay(GraphQL)の採用が進む
 
 ---
+transition: fade
+---
 
 # MetaにとってGraphQL
 
@@ -165,10 +167,18 @@ GraphQLはプロトコルなのか
 開発元のMetaと世間では、<span v-mark.underline.red class="font-bold">GraphQL採用のモチベーションが異なる</span>ことが多い
 
 ---
+
+# MetaにとってGraphQL
+
+<div class="w-full h-full flex justify-center items-center">
+  <img src="/graphql.png" alt="GraphQL" class="h-350px">
+</div>
+
+---
 transition: fade
 ---
 
-# Metaの技術基盤 React&GraphQL
+# MetaにとってGraphQLとReact
 
 Metaは我々が想像もできない規模の開発を行なっている
 
@@ -184,7 +194,7 @@ Metaは我々が想像もできない規模の開発を行なっている
 
 ---
 
-# Metaの技術基盤 React&GraphQL
+# MetaにとってGraphQLとReact
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
@@ -247,6 +257,8 @@ Reactアプリケーションが肥大化するにつれ、さまざまな問題
 https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivation
 
 ---
+transition: fade
+---
 
 # React Server Componentsの自立分散性
 
@@ -257,6 +269,8 @@ https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivat
 - MetaではReact+GraphQLで解決していた課題を、React単体で解決できるようにしたとも取れる
 
 ---
+
+# React Server Componentsの自立分散性
 
 <div class="w-full h-full flex justify-center items-center">
   <img src="/rsc.png" alt="React Server Components" class="h-350px">
