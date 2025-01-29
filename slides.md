@@ -158,8 +158,6 @@ Reactは急速にMeta内外での実績を獲得していく
 GraphQLはプロトコルなのか
 
 - MetaにとってGraphQLはBFFに対する通信、つまり**フロントエンド内通信**の問題を解決する技術
-  - Fragmentを使って「コンポーネントが必要なデータはコンポーネントが宣言する」ことが基本
-  - [Thinking in Relay](https://relay.dev/docs/principles-and-architecture/thinking-in-relay/)
 - Meta以外では**バックエンドとの通信**でプロトコルとして採用されることが多い
   - Github、Shopify、Netflix、etc...
   - （Metaではこれは**Thrift**というRPCが採用されている）
@@ -170,7 +168,7 @@ GraphQLはプロトコルなのか
 
 # Metaの考えるGraphQLが担う層
 
-<div class="w-full h-full flex justify-center items-center">
+<div class="w-full h-full flex justify-center mt-10">
   <img src="/graphql.png" alt="GraphQL" class="h-350px">
 </div>
 
@@ -200,17 +198,26 @@ transition: fade
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
-- MetaはReactとGraphQLによって**自律分散的アーキテクチャ**を目指す傾向にある
-  - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ
-  - 中央集権の例はReduxやWeb MVCなど
+- MetaにとってReactとGraphQLは大規模システムを支える**自律分散的アーキテクチャ**の基盤である
+  - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ（e.g. ReduxやWeb MVCなど）
+  - [Thinking in Relay](https://relay.dev/docs/principles-and-architecture/thinking-in-relay/)
+
+---
+transition: fade
+---
+
+# MetaにとってGraphQLとReact
+
+<div class="w-full h-full mt-10">
+  <img src="/top-level-data-fetching.png" alt="Top Level Data Fetching">
+</div>
 
 ---
 
 # MetaにとってGraphQLとReact
 
-<div class="w-full h-full flex justify-center items-center flex-col gap-10">
-  <img src="/top-level-data-fetching.png" alt="Top Level Data Fetching" width="80%">
-  <img src="/graphql-co-location.png" alt="GraphQL" width="80%">
+<div class="w-full h-full mt-10">
+  <img src="/graphql-co-location.png" alt="GraphQL">
 </div>
 
 ---
@@ -273,12 +280,21 @@ https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md#motivat
 - MetaではReact+GraphQLで解決していた課題を、React単体で解決できるようにしたとも取れる
 
 ---
+transition: fade
+---
 
 # RSCでのData Fetching
 
-<div class="w-full h-full flex justify-center items-center flex-col gap-10">
-  <img src="/graphql-co-location.png" alt="GraphQL" width="70%">
-  <img src="/react-server-components.png" alt="React Server Components" width="70%">
+<div class="w-full h-full mt-10">
+  <img src="/graphql-co-location.png" alt="GraphQL">
+</div>
+
+---
+
+# RSCでのData Fetching
+
+<div class="w-full h-full mt-10">
+  <img src="/react-server-components.png" alt="React Server Components">
 </div>
 
 ---
