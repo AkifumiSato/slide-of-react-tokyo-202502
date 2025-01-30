@@ -89,11 +89,11 @@ Reactは何を解決すべく生まれたのか
 
 # 2012年のMetaとフレームワーク開発
 
-Meta（当時はFacebook）はフロントエンドフレームワークを内省開発していた
+Meta（当時はFacebook）はフロントエンドフレームワークを内製開発していた
 
 1. Metaは複雑なUI実装に苦労していた
 1. これを解決すべく、クライアントサイドMVCフレームワークであるBolt.jsを開発していた
-1. UI開発の最も複雑な問題は**更新**である仮説が生まれる
+1. UI開発の最も複雑な問題は<span v-mark.underline.red class="font-bold">UIの更新</span>である、という仮説が生まれた
 1. MVCを削除し、更新に応じて再レンダリングするアイディアを取り込んだFBolt.jsが誕生
 1. さらにJSXなどのアイディアが取り込まれ、**React**が誕生
 
@@ -118,8 +118,8 @@ Reactは以下3つのアイディアを持って生まれた
 OSSとして公開した直後は、批判的意見が多かった
 
 - Meta社内でReactが採用されはじめ、2013年ReactはOSS化
-  - US JSConfで発表するも、否定的意見が多かった
-  - 多くの改善を重ねUE JSConfで再度発表、徐々にコミュニティが拡大し採用事例も増える
+  - JSConf USで発表するも、否定的意見が多かった
+  - 多くの改善を重ねJSConf UEで再度発表、徐々にコミュニティが拡大し採用事例も増える
 
 当初は強い逆風だったが、それだけ<span v-mark.underline.red class="font-bold">革命的なアイディア</span>だったとも言える
 
@@ -169,14 +169,14 @@ Reactは急速にMeta内外での実績を獲得していく
 
 ---
 
-# MetaにとってGraphQL
+# MetaにとってのGraphQL
 
 GraphQLはプロトコルなのか
 
-- MetaにとってGraphQLはBFFに対する通信、つまり**フロントエンド内通信**の問題を解決する技術
-- Meta以外では**バックエンドとの通信**でプロトコルとして採用されることが多い
+- MetaにとってのGraphQLはBFFに対する通信、つまり**フロントエンドの問題**を解決する技術
+  - BFF〜バックエンドの通信では、**Thrift**というRPCが採用されている
+- Meta以外では**バックエンド通信のプロトコル**として採用されることが多い
   - Github、Shopify、Netflix、etc...
-  - （Metaではこれは**Thrift**というRPCが採用されている）
 
 開発元のMetaと世間では、<span v-mark.underline.red class="font-bold">GraphQL採用のモチベーションが異なる</span>ことが多い
 
@@ -184,15 +184,19 @@ GraphQLはプロトコルなのか
 
 # Metaの考えるGraphQLが担う層
 
-<div class="w-full h-full flex justify-center mt-10">
-  <img src="/graphql.png" alt="GraphQL" class="h-350px">
+<div class="flex justify-center mt-10">
+  <img src="/graphql.png" alt="GraphQL" width="80%">
 </div>
+
+<!--
+https://excalidraw.com/#json=J6xbE-rC2K5hIMY3EUYwW,HHuYJ-TUkRoT8SBc5xmBbw
+-->
 
 ---
 transition: fade
 ---
 
-# MetaにとってGraphQLとReact
+# MetaにとってのGraphQLとReact
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
@@ -204,17 +208,17 @@ Metaの大規模プロダクトたちを支えるアーキテクチャ
 transition: fade
 ---
 
-# MetaにとってGraphQLとReact
+# MetaにとってのGraphQLとReact
 
-<div class="w-full h-full mt-10">
+<div class="flex justify-center mt-10">
   <img src="/top-level-data-fetching.png" alt="Top Level Data Fetching">
 </div>
 
 ---
 
-# MetaにとってGraphQLとReact
+# MetaにとってのGraphQLとReact
 
-<div class="w-full h-full mt-10">
+<div class="flex justify-center mt-10">
   <img src="/graphql-co-location.png" alt="GraphQL">
 </div>
 
@@ -283,7 +287,7 @@ transition: fade
 
 # RSCでのData Fetching
 
-<div class="w-full h-full mt-10">
+<div class="flex justify-center mt-10">
   <img src="/graphql-co-location.png" alt="GraphQL">
 </div>
 
@@ -291,7 +295,7 @@ transition: fade
 
 # RSCでのData Fetching
 
-<div class="w-full h-full mt-10">
+<div class="flex justify-center mt-10">
   <img src="/react-server-components.png" alt="React Server Components">
 </div>
 
