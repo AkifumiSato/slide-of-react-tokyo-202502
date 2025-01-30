@@ -200,9 +200,9 @@ transition: fade
 
 Metaの大規模プロダクトたちを支えるアーキテクチャ
 
-- MetaにとってReactとGraphQLは大規模システムを支える**自律分散的アーキテクチャ**の基盤である
-  - 自律分散的アーキテクチャの対義語は中央集権アーキテクチャ（e.g. ReduxやWeb MVCなど）
-  - [Thinking in Relay](https://relay.dev/docs/principles-and-architecture/thinking-in-relay/)
+- MetaにとってReactとGraphQLは大規模システムを支える<span v-mark.underline.red class="font-bold">自律分散的アーキテクチャ</span>の基盤である
+  - Not 中央集権アーキテクチャ（e.g. ReduxやWeb MVCなど）
+  - [Thinking in Relay](https://relay.dev/docs/principles-and-architecture/thinking-in-relay/)などからもMetaの思考が読み取れる
 
 ---
 transition: fade
@@ -229,9 +229,8 @@ transition: fade
 Metaを支える技術基盤
 
 - MetaにとってReactとGraphQLは<span v-mark.underline.red class="font-bold">自立分散的アーキテクチャ</span>を構築するための基盤
-  - 自立分散的アーキテクチャ=コンポーネントが必要なデータを自分で宣言する世界
-  - バックエンドはこれに合わせて、細粒度に設計される必要がある
-  - 実際にMetaは社内でこれを採用し、現在も多くのプロダクトを支えている
+  - コンポーネントが必要なデータを自分で宣言する世界
+  - 現在もMetaで多くのプロダクトを支えている
 
 ---
 layout: section
@@ -305,9 +304,9 @@ transition: fade
 
 Reactは大規模開発に通用する
 
-- MetaはReact+GraphQLで自立分散的アーキテクチャを採用している
-- React Server Componentsもまた、自立分散的アーキテクチャである
-- Reactとは、「大規模開発まで通用する、シンプルなフレームワーク」である
+- Reactは大規模開発を支えるシンプルなフレームワークである
+- MetaはReact+GraphQLで自立分散的なアーキテクチャを採用している
+- React Server Componentsもまた、自立分散的アーキテクチャであり、正常進化である
 
 ---
 layout: section
