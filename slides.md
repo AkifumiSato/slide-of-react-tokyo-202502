@@ -176,7 +176,6 @@ GraphQLはプロトコルなのか
 - MetaにとってのGraphQLはBFFに対する通信、つまり**フロントエンドの問題**を解決する技術
   - BFF〜バックエンドの通信では、**Thrift**というRPCが採用されている
 - Meta以外では**バックエンド通信のプロトコル**として採用されることが多い
-  - Github、Shopify、Netflix、etc...
 
 開発元のMetaと世間では、<span v-mark.underline.red class="font-bold">GraphQL採用のモチベーションが異なる</span>ことが多い
 
